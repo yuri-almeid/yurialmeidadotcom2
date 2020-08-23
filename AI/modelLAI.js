@@ -3,10 +3,10 @@
 // Variáveis de configuração (Pode mexer)
 //const symbol_ = 'frxEURCAD';      // Ativo
 const symbol_ = 'frxEURJPY';        // Ativo
-const data_size = 1500;             // Quantidade de dados
-const window_size = 12;             // Tamanho da média móvel
-const n_layers = 8;                 // Número de camadas ocultas
-const n_epochs = 300;               // Número de épocas de treinamento
+const data_size = 300;             // Quantidade de dados
+const window_size = 15;             // Tamanho da média móvel
+const n_layers = 4;                 // Número de camadas ocultas
+const n_epochs = 5;               // Número de épocas de treinamento
 const learning_rate = 0.01;         // Taxa de aprendizado
 const training_size = 90;           // Tamanho da parcela de treino em %
 
