@@ -270,11 +270,10 @@ async function main(X, Y, epochs, real, sma){
 
   // Chama função que cria e treina o modelo
   let model = tf.sequential()
-  console.log(model);
   await model.loadLayersModel(
     tf.io.browserHTTPRequest(
       'http://yurialmeida.com/AI/json/my-model.json',
-      {method: 'GET', headers: {mode: 'no-cors'}}
+      {method: 'GET'}
     )
   );
   
