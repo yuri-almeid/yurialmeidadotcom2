@@ -263,14 +263,26 @@ async function makePredictions(X, model, max, min)
   return output;
 }
 
+
+
 async function main(X, Y, epochs, real, sma){
 
+
   // Chama função que cria e treina o modelo
-  const model = await tf.loadLayersModel('http://yurialmeida.com/AIModel/my-model.json');
-  console.log('Modelo treinado com sucesso');
+  let model = tf.sequential()
+  console.log(model);
+  await model.loadLayersModel(
+    tf.io.browserHTTPRequest(
+      'http://yurialmeida.com/AI/json/my-model.json',
+      {method: 'GET', headers: {mode: 'no-cors'}}
+    )
+  );
+  
+  console.log(model);
+  console.log('catapimba');
 
   // Chama função de validação do modelo
-  await validate(X, Y, epochs, model, real, sma, result.max, result.min);
+  await validate(X, Y, epochs, model, real, sma);
 
 
 }

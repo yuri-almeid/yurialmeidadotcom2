@@ -1,7 +1,13 @@
 async function main(){
   
+  let model = tf.sequential();
 
-  const model = await tf.loadLayersModel('http://yurialmeida.com/AI/my-model.json');
+  await model.loadLayersModel(tf.io.browserHTTPRequest(
+    'http://yurialmeida.com/AI/json/my-model.json',
+    {method: 'GET', headers: {mode: 'no-cors'} }));
+
+  console.log(model)
+
 }
 
 main()
