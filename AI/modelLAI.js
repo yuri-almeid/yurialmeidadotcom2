@@ -133,9 +133,9 @@ async function dataPreprocessing(data_raw) {
     aux = arrAvg(X[i]);
     Y.push(parseFloat(aux.toFixed(5)));
   }
-  console.log("Matriz X (input): ")
+  console.log("Matriz X (input): ");
   showData(X);
-  console.log("Matriz Y (label): ")
+  console.log("Matriz Y (label): ");
   showData(Y);
 
   // Plot da média móvel -----

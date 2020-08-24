@@ -269,13 +269,18 @@ async function main(X, Y, epochs, real, sma){
 
 
   // Chama função que cria e treina o modelo
-  let model = tf.sequential()
-  await model.loadLayersModel(
-    tf.io.browserHTTPRequest(
-      'http://yurialmeida.com/AI/json/my-model.json',
-      {method: 'GET'}
-    )
-  );
+  let model = tf.model()
+  
+  model = await tf.loadLayersModel('localstorage://AI/json/my-model.json');
+  
+  // await model.loadLayersModel(
+
+  //   tf.io.browserHTTPRequest(
+  //     'http://yurialmeida.com/AI/json/my-model.json',
+  //     {method: 'GET'}
+  //   )
+  
+  // );
   
   console.log(model);
   console.log('catapimba');
