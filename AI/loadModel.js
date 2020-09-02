@@ -272,7 +272,7 @@ async function main(X, Y, epochs, real, sma){
   let model = tf.model()
   
   model = await tf.loadLayersModel('localstorage://AI/json/my-model.json');
-  
+  console.log("ola");  
   // await model.loadLayersModel(
 
   //   tf.io.browserHTTPRequest(
